@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+        <head>
+        <meta charset="UTF-8"> <!--Start of my scripts and bootstrap-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHsfescfBYNRyCA_j-WUXiIBR0V-Itw64&callback=initMap" type="text/javascript"></script>
+        <title>San Diego Hot Spots</title>
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+        <!-- endbower -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="/app/styles/styles.css">
+        <!-- endinject -->
+        </head>
+
+    <body ng-controller="MainController as vm">  <!--Start of my body and ng-controller-->
+
+        <p><br/><br/></p>
+
+            <div class="container">  <!--Start of my container-->
+            <h2>San Diego Top Spots</h2>
+            <p>There are some great places to see in downtown San Diego.</p>
+
+    <table class="table table-bordered table=striped table-hover">   <!--Start of my table with with ng repeat data and map link-->
+        <thread>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Location</th>
+          </tr>
+          <tr ng-repeat="memberdata in vm.topspots">
+          <td>{{ memberdata.name }}</td>
+          <td>{{ memberdata.description}}</td>
+          <td><a ng-href="http://www.google.com/maps?q={{memberdata.location[0]}} {{memberdata.location[1]}}" class='btn btn-info'>GOOGLE MAPS</a></-->
+          </tr>
+        </thead>       
+      </table>     
+    </div>
+
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <!-- endbower -->   
+    <!-- inject:js -->
+    <script src="/app/app.js"></script>
+    <script src="/app/main.controller.js"></script>
+    <script src="/app/main.factory.js"></script>
+    <!-- endinject -->
+  </body>
+
+</html>
